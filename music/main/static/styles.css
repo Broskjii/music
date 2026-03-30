@@ -1,0 +1,64 @@
+﻿body {
+    margin: 0;
+    padding: 20px;
+    background: white;
+}
+
+#wrapper {
+    width: 1000px;
+    min-height: 830px;
+    margin: 0 auto;
+    border: 2px solid black;
+    background: #ffffff;
+}
+
+#header {
+    border-bottom: 2px solid black;
+    padding: 6px;
+}
+
+#menu {
+    background: #1aa47d;
+    padding: 10px 20px;
+    font-family: Arial;
+}
+
+#menu a {
+    color: white;
+    text-decoration: none;
+    margin-right: 40px;
+    font-size: 18px;
+}
+
+#container {
+    min-height: 700px;
+}
+
+#content {
+    padding: 20px;
+}
+
+#footer {
+    border-top: 2px solid black;
+    padding: 14px 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background: #fff;
+}
+
+table th,
+table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+    font-size: 18px;
+}
+
+table th {
+    background-color: #f2f2f2;
+    color: #333;
+}

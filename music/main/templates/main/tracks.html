@@ -1,0 +1,42 @@
+﻿{% extends "base.html" %}
+
+{% block title %}Треки{% endblock title %}
+
+{% block content %}
+<table>
+    <thead>
+        <tr>
+            <th>№</th>
+            <th>Название</th>
+            <th>Длительность</th>
+            <th>Жанры</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for track in tracks %}
+        <tr>
+            <td>{{track.id}}</td> 
+            {% if track.audio_file %}
+                <audio src="{{ track.audio_file.url }}" controls></audio>>
+            {% endif %}
+            <br>
+            <td>
+                {{ track.title }}
+        </td>
+            <td>{{ track.duration }}</td>
+            <td>
+                {% for genre in track.genres.all %}
+                    {{ genre.name_ru }}{% if not forloop.last %}, {% endif %}
+                {% empty %}
+                    -
+                {% endfor %}
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="4">Треки пока не добавлены</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}

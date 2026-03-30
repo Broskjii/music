@@ -1,0 +1,35 @@
+﻿{% extends "base.html" %}
+
+{% block title %}Жанры музыки{% endblock title %}
+
+{% block content %}
+<table>
+    <thead>
+        <tr>
+            <th>№</th>
+            <th>Название</th>
+            <th>Название на англ.</th>
+            <th>Описание</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for genre in genres %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ genre.name_ru }}</td>
+            <td>{{ genre.name_en }}</td>
+            <td>{{ genre.description }}</td>
+            <td><a href="/editgenre/{{genre.id}}">Редактировать</a>
+            <td><a href="/deletegenre/{{genre.id}}">Удалить</a>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="4">Жанры пока не добавлены</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="/add_genre/"> Добавить жанр</a>
+{% endblock content %}
